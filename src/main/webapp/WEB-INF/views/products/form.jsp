@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,15 @@
 </head>
 
 <body>
+
+	<spring:hasBindErrors name="product">
+		<ul>
+			<c:forEach items="${errors.allErrors}" var="error">
+				<li>${error.code}</li>
+			</c:forEach>
+		</ul>
+	</spring:hasBindErrors>
+	
 	<form method="post" action="/casadocodigo/produtos">
 		<div>
 			<label for="title">Título</label>
