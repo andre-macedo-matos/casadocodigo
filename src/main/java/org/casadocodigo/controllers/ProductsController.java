@@ -13,12 +13,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @Transactional
+@RequestMapping("/produtos")
 public class ProductsController {
 
 	@Autowired
 	private ProductDAO productDAO;
 	
-	@RequestMapping(value = "/produtos/form", method = RequestMethod.GET)
+	@RequestMapping(value = "/form", method = RequestMethod.GET)
 	public ModelAndView form() {
 		ModelAndView modelAndView = new ModelAndView("products/form");
 		modelAndView.addObject("types", BookType.values());
@@ -26,7 +27,7 @@ public class ProductsController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value = "/produtos", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public String save(Product product) {
 		productDAO.save(product);
 		System.out.println("Cadastrado novo produto: " + product);
@@ -34,7 +35,7 @@ public class ProductsController {
 		return "products/ok";
 	}
 	
-	@RequestMapping(value = "/produtos", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView list() {
 		ModelAndView modelAndView = new ModelAndView("products/list");
 		modelAndView.addObject("products", productDAO.list());
