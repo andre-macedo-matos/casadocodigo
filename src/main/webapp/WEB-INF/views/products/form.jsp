@@ -15,8 +15,8 @@
 		</div>
 		
 		<div>
-			<label for="descripton">Descrição</label>
-			<textarea rows="10" cols="20" id="description"></textarea>
+			<label for="description">Descrição</label>
+			<textarea rows="10" cols="20" name="description" id="description"></textarea>
 		</div>
 		
 		<div>
