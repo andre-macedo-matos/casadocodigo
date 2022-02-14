@@ -40,6 +40,13 @@ public class Product {
 	@ElementCollection
 	private List<Price> prices = new ArrayList<Price>();
 	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
 	public String getTitle() {
 		return title;
 	}
