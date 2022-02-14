@@ -31,7 +31,7 @@ public class ProductsController {
 	}
 	
 	@RequestMapping(value = "/form", method = RequestMethod.GET)
-	public ModelAndView form() {
+	public ModelAndView form(Product product) {
 		ModelAndView modelAndView = new ModelAndView("products/form");
 		modelAndView.addObject("types", BookType.values());
 		
@@ -41,7 +41,7 @@ public class ProductsController {
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView save(@Valid Product product, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 		if(bindingResult.hasErrors()) 
-			return form();
+			return form(product);
 		
 		productDAO.save(product);
 		System.out.println("Cadastrado novo produto: " + product);
