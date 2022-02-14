@@ -1,6 +1,5 @@
 package org.casadocodigo.loja.models;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -36,6 +35,8 @@ public class Product {
 	@DateTimeFormat
 	private Calendar releaseDate;
 	
+	private String summaryPath;
+	
 	@ElementCollection
 	private List<Price> prices = new ArrayList<Price>();
 	
@@ -45,12 +46,14 @@ public class Product {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	
 	public String getDescription() {
 		return description;
 	}
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
 	public int getPages() {
 		return pages;
 	}
@@ -72,10 +75,17 @@ public class Product {
 		this.releaseDate = releaseDate;
 	}
 	
+	public String getSummaryPath() {
+		return summaryPath;
+	}
+	public void setSummaryPath(String summaryPath) {
+		this.summaryPath = summaryPath;
+	}
+	
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", title=" + title + ", description=" + description + ", pages=" + pages
-				+ ", releaseDate=" + releaseDate + ", prices=" + prices + "]";
+				+ ", releaseDate=" + releaseDate + ", summaryPath=" + summaryPath + ", prices=" + prices + "]";
 	}
 	
 }

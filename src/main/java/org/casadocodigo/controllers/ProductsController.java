@@ -4,6 +4,7 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.casadocodigo.daos.ProductDAO;
+import org.casadocodigo.loja.infra.FileSaver;
 import org.casadocodigo.loja.models.BookType;
 import org.casadocodigo.loja.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -22,6 +24,9 @@ public class ProductsController {
 	@Autowired
 	private ProductDAO productDAO;
 	
+	@Autowired
+	private FileSaver fileSaver;
+	
 	@RequestMapping(value = "/form", method = RequestMethod.GET)
 	public ModelAndView form(Product product) {
 		ModelAndView modelAndView = new ModelAndView("products/form");
@@ -31,11 +36,13 @@ public class ProductsController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView save(@Valid Product product, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+	public ModelAndView save(MultipartFile summary, @Valid Product product, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 		if(bindingResult.hasErrors()) 
 			return form(product);
-		
+
 		productDAO.save(product);
+		String webPath = fileSaver.write("casadocodigo", summary);
+		product.setSummaryPath(webPath);
 		System.out.println("Cadastrado novo produto: " + product);
 		
 		redirectAttributes.addFlashAttribute("sucesso", "Produto Cadastrado com Sucesso!!!");
