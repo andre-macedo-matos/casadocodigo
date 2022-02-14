@@ -16,7 +16,6 @@ public class Price {
 	public BigDecimal getValue() {
 		return value;
 	}
-
 	public void setValue(BigDecimal value) {
 		this.value = value;
 	}
@@ -24,7 +23,6 @@ public class Price {
 	public BookType getBookType() {
 		return bookType;
 	}
-
 	public void setBookType(BookType bookType) {
 		this.bookType = bookType;
 	}
