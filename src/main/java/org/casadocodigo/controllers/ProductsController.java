@@ -6,12 +6,9 @@ import javax.validation.Valid;
 import org.casadocodigo.daos.ProductDAO;
 import org.casadocodigo.loja.models.BookType;
 import org.casadocodigo.loja.models.Product;
-import org.casadocodigo.loja.validation.ProductValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,11 +21,6 @@ public class ProductsController {
 
 	@Autowired
 	private ProductDAO productDAO;
-	
-	@InitBinder
-	protected void initBinder(WebDataBinder binder) {
-		binder.setValidator(new ProductValidator());
-	}
 	
 	@RequestMapping(value = "/form", method = RequestMethod.GET)
 	public ModelAndView form(Product product) {
