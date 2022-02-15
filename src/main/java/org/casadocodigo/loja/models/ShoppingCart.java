@@ -1,7 +1,9 @@
 package org.casadocodigo.loja.models;
 
+import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -30,6 +32,22 @@ public class ShoppingCart {
 			.count();
 		
 		return count.intValue();
+	}
+	
+	public Set<ShoppingItem> getList() {
+		return items.keySet();
+	}
+	
+	public BigDecimal getTotal() {
+		double sum = getList().stream()
+		.mapToDouble(item -> getTotal(item).doubleValue())
+		.sum();
+		
+		return new BigDecimal(sum);
+	}
+
+	public BigDecimal getTotal(ShoppingItem item) {
+		return item.getTotal(getQuantity(item));
 	}
 
 }
