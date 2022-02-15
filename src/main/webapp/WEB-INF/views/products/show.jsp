@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +48,7 @@
 						</li>
 						
 						<li>
-							<a href="" rel="nofollow">Seu carrinho (${shoppingCart.quantity})</a>
+							<a href="${spring:mvcUrl('SC#items').build()}">Seu carrinho (${shoppingCart.quantity})</a>
 						</li>
 					</c:forEach>
 				</ul>
