@@ -45,6 +45,10 @@
 							</label>
 							<p class="variant-price">${price.value}</p>
 						</li>
+						
+						<li>
+							<a href="" rel="nofollow">Seu carrinho (${shoppingCart.quantity})</a>
+						</li>
 					</c:forEach>
 				</ul>
 			<input type="submit" class="submit-image icon-basket-alt" alt="Compre agora" title="Compre agopra '${product.title}'!" value="comprar">	

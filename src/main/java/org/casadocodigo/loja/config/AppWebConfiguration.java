@@ -3,6 +3,7 @@ package org.casadocodigo.loja.config;
 import org.casadocodigo.controllers.HomeController;
 import org.casadocodigo.daos.ProductDAO;
 import org.casadocodigo.loja.infra.FileSaver;
+import org.casadocodigo.loja.models.ShoppingCart;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,7 +18,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses = {HomeController.class, ProductDAO.class, FileSaver.class})
+@ComponentScan(basePackageClasses = {HomeController.class, ProductDAO.class, FileSaver.class, ShoppingCart.class})
 public class AppWebConfiguration {
 	
 	@Bean
