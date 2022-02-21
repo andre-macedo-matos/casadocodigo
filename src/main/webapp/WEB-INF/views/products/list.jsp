@@ -10,6 +10,7 @@
 
 <body>
 	<h1>${sucesso}</h1>
+	<h1>${message}</h1>
 
 	<table>
 		<tr>

@@ -13,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @Scope(value = WebApplicationContext.SCOPE_REQUEST)
@@ -41,17 +42,17 @@ public class PaymentController {
 	}
 	
 	@RequestMapping(value = "/sucess")
-	public ModelAndView sucess() {
-		ModelAndView modelAndView = new ModelAndView("shoppingCart/result");
-		modelAndView.addObject("message", "Compra Realizada com sucesso");
+	public ModelAndView sucess(RedirectAttributes redirectAttributes) {
+		ModelAndView modelAndView = new ModelAndView("redirect:/produtos");
+		redirectAttributes.addFlashAttribute("message", "Compra Realizada com sucesso");
 		
 		return modelAndView;
 	}
 	
 	@RequestMapping(value = "/error")
-	public ModelAndView error() {
-		ModelAndView modelAndView = new ModelAndView("shoppingCart/result");
-		modelAndView.addObject("message", "Compra não pode ser realizada");
+	public ModelAndView error(RedirectAttributes redirectAttributes) {
+		ModelAndView modelAndView = new ModelAndView("redirect:/produtos");
+		redirectAttributes.addFlashAttribute("message", "Compra não pode ser realizada");
 		
 		return modelAndView;
 	}
