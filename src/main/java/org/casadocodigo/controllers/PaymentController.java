@@ -1,18 +1,17 @@
 package org.casadocodigo.controllers;
 
 import java.math.BigDecimal;
-import java.util.concurrent.Callable;
 
-import org.casadocodigo.loja.models.PaymentData;
+import org.casadocodigo.loja.models.IntegrandoComPagamento;
 import org.casadocodigo.loja.models.ShoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.request.async.DeferredResult;
 
 @Controller
 @Scope(value = WebApplicationContext.SCOPE_REQUEST)
@@ -26,19 +25,17 @@ public class PaymentController {
 	private RestTemplate restTemplate;
 
 	@RequestMapping(value = "checkout", method = RequestMethod.POST)
-	public Callable<String> checkout() {
+	public DeferredResult<String> checkout() {
 		
-		return () -> {
-			BigDecimal total = shoppingCart.getTotal();
-			
-			String uriToPay = "http://book-payment.herokuapp.com/payment";
-			try {
-				restTemplate.postForObject(uriToPay, new PaymentData(total), String.class);
-				
-				return "redirect:/payment/sucess";
-			} catch (HttpClientErrorException e) {
-				return "redirect:/payment/error";
-			}
-		};
+		BigDecimal total = shoppingCart.getTotal();
+		
+		DeferredResult<String> result = new DeferredResult<String>();
+		
+		IntegrandoComPagamento integrandoComPagamento = new IntegrandoComPagamento(result, total, restTemplate);
+		
+		Thread thread = new Thread(integrandoComPagamento);
+		thread.start();
+		
+		return result;
 	}
 }
