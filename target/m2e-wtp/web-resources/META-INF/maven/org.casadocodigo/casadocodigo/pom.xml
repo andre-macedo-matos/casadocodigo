@@ -15,6 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.versao>4.1.0.RELEASE</spring.versao>
 		<hibernate.version>4.3.0.Final</hibernate.version>
+		<jackson.versao>2.5.1</jackson.versao>
 	</properties>
 
 	<dependencies>
@@ -158,6 +159,18 @@
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-impl</artifactId>
 			<version>2.2.11</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.versao}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.versao}</version>
 		</dependency>
 
 	</dependencies>
