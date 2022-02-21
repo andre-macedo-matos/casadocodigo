@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>${product.title}</title>
 </head>
 <body>
 	<header id="product-highlight" class="clearfix">
