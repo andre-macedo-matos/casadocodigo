@@ -1,6 +1,7 @@
 package org.casadocodigo.controllers;
 
 import java.math.BigDecimal;
+import java.util.concurrent.Callable;
 
 import org.casadocodigo.loja.models.PaymentData;
 import org.casadocodigo.loja.models.ShoppingCart;
@@ -17,24 +18,27 @@ import org.springframework.web.context.WebApplicationContext;
 @Scope(value = WebApplicationContext.SCOPE_REQUEST)
 @RequestMapping("/payment")
 public class PaymentController {
-	
+
 	@Autowired
 	private ShoppingCart shoppingCart;
-	
+
 	@Autowired
 	private RestTemplate restTemplate;
-	
+
 	@RequestMapping(value = "checkout", method = RequestMethod.POST)
-	public String checkout() {
-		BigDecimal total = shoppingCart.getTotal();
+	public Callable<String> checkout() {
 		
-		String uriToPay = "http://book-payment.herokuapp.com/payment";
-		try {
-			restTemplate.postForObject(uriToPay, new PaymentData(total), String.class);
+		return () -> {
+			BigDecimal total = shoppingCart.getTotal();
 			
-			return "redirect:/payment/sucess";
-		} catch (HttpClientErrorException e) {
-			return "redirect:/payment/error";
-		}
+			String uriToPay = "http://book-payment.herokuapp.com/payment";
+			try {
+				restTemplate.postForObject(uriToPay, new PaymentData(total), String.class);
+				
+				return "redirect:/payment/sucess";
+			} catch (HttpClientErrorException e) {
+				return "redirect:/payment/error";
+			}
+		};
 	}
 }
