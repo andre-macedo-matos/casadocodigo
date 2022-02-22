@@ -73,7 +73,4 @@ public class ProductsController {
 		return modelAndView;
 	}
 	
-	
-	
-	
 }
