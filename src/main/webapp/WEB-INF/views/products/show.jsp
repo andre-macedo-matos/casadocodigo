@@ -1,7 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +30,7 @@
 	</header>
 	
 	<section class="buy-options clearfix">
-		<form action="<c:url value='/shopping'/>" method="post" class="container">
+		<form:form servletRelativeAction="/shopping" cssClass="container">
 			<input type="hidden" value="${product.id}" name="productId"/>
 				<ul id="variants" class="clearfix">
 					<c:forEach items="${product.prices}" var="price">
@@ -53,7 +54,7 @@
 					</c:forEach>
 				</ul>
 			<input type="submit" class="submit-image icon-basket-alt" alt="Compre agora" title="Compre agopra '${product.title}'!" value="comprar">	
-		</form>
+		</form:form>
 	</section>
 
 </body>
