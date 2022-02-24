@@ -1,12 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>hello world</title>
-</head>
-<body>
-	<h1>Hello, World!!!</h1>
-</body>
-</html>
+<%@ taglib prefix="customTags" tagdir="/WEB-INF/tags" %>
+
+<customTags:pageTemplate bodyClass="cart" title="Welcome">
+	<jsp:body>
+		<h1>Hello, World!!!</h1>
+	</jsp:body>
+</customTags:pageTemplate>
