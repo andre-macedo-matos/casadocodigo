@@ -6,12 +6,12 @@
 		<div id="header-content">
 			<nav id="main-nav">
 				<ul class="clearfix">
-z
-<%-- 					<li><a href="${spring:mvcUrl('SCC#items').build()}" --%>
-					<li><a href=""
+
+					<li><a href="${spring:mvcUrl('SC#items').build()}"
 						rel="nofollow">Seu carrinho (${shoppingCart.quantity}) </a></li>
 
-					<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre nós </a></li>
+					<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre
+							nós </a></li>
 
 					<li><a href="/pages/perguntas-frequentes" rel="nofollow">Perguntas
 							Frequentes </a></li>
@@ -30,21 +30,26 @@ z
 	<ul class="container">
 		<li class="category"><a href="http://www.casadocodigo.com.br">Home</a>
 		<li class="category"><a href="/collections/livros-de-agile">
+				<fmt:message key="navigation.category.agile" /> 
 		</a>
 		<li class="category"><a href="/collections/livros-de-front-end">
-				
+				<fmt:message key="navigation.category.front_end" />
 		</a>
 		<li class="category"><a href="/collections/livros-de-games">
-				
+				<fmt:message key="navigation.category.games" />
 		</a>
-		<li class="category"><a href="/collections/livros-de-java"> 
+		<li class="category"><a href="/collections/livros-de-java"> <fmt:message
+					key="navigation.category.java" />
 		</a>
 		<li class="category"><a href="/collections/livros-de-mobile">
-				
+				<fmt:message key="navigation.category.mobile" />
 		</a>
 		<li class="category"><a
-			href="/collections/livros-desenvolvimento-web"> 
+			href="/collections/livros-desenvolvimento-web"> <fmt:message
+					key="navigation.category.web" />
 		</a>
-		<li class="category"><a href="/collections/outros"> 
+		<li class="category"><a href="/collections/outros"> <fmt:message
+					key="navigation.category.others" />
+		</a>
 	</ul>
 </nav>
