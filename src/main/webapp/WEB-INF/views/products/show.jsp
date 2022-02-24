@@ -53,7 +53,7 @@
 						<a href="${spring:mvcUrl('SC#items').build()}">Seu carrinho (${shoppingCart.quantity})</a>
 					</li>
 				</ul>
-			<input type="submit" class="submit-image icon-basket-alt" alt="Compre agora" title="Compre agopra '${product.title}'!" value="comprar">	
+			<input type="submit" class="submit-image icon-basket-alt" alt="Compre agora" title="Compre agora '${product.title}'!" value="comprar">	
 		</form:form>
 	</section>
 
