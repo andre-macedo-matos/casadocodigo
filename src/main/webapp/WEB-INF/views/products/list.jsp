@@ -4,15 +4,19 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
-<security:authentication property="principal" var="user"/>
-Olá ${user.name}
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Produtos Cadastrados</title>
 </head>
-
 <body>
+	<security:authentication property="principal" var="user"/>
+	<security:authorize access="isAuthenticated()">
+		<div>
+			<h1>Olá ${user.name}</h1>
+		</div>
+	</security:authorize>
+	
 	<h1>${sucesso}</h1>
 	<h1>${message}</h1>
 
@@ -25,7 +29,7 @@ Olá ${user.name}
 		<c:forEach items="${products}" var="product">
 			<tr>
 				<td>
-					<a href="${spring:mvcUrl('PC#show').arg(0,product.id).build()}">${product.title}</a>
+					<a href="${spring:mvcUrl('PC#show').arg(0, product.id).build()}">${product.title}</a>
 				</td>
 				<td>
 					<c:forEach items="${product.prices}" var="price">
@@ -35,6 +39,14 @@ Olá ${user.name}
 			</tr>
 		</c:forEach>
 	</table>
+	
+	<security:authorize access="hasRole('ROLE_ADMIN')">
+		<div>
+			<a href="${spring:mvcUrl('PC#form').build()}">
+				Cadastrar Novo Produto
+			</a>
+		</div>
+	</security:authorize>
 	
 </body>
 </html>
