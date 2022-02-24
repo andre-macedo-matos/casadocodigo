@@ -47,11 +47,11 @@
 							</label>
 							<p class="variant-price">${price.value}</p>
 						</li>
-						
-						<li>
-							<a href="${spring:mvcUrl('SC#items').build()}">Seu carrinho (${shoppingCart.quantity})</a>
-						</li>
 					</c:forEach>
+					
+					<li>
+						<a href="${spring:mvcUrl('SC#items').build()}">Seu carrinho (${shoppingCart.quantity})</a>
+					</li>
 				</ul>
 			<input type="submit" class="submit-image icon-basket-alt" alt="Compre agora" title="Compre agopra '${product.title}'!" value="comprar">	
 		</form:form>
