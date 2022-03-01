@@ -17,6 +17,7 @@
 		<hibernate.version>4.3.0.Final</hibernate.version>
 		<jackson.versao>2.5.1</jackson.versao>
 		<security.versao>4.0.0.M2</security.versao>
+		<jaxb.versao>2.2.11</jaxb.versao>
 	</properties>
 
 	<dependencies>
@@ -135,12 +136,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.scireum</groupId>
-			<artifactId>s3ninja</artifactId>
-			<version>2.3.2</version>
-		</dependency>
-
-		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk</artifactId>
 			<version>1.9.11</version>
@@ -149,17 +144,17 @@
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
-			<version>2.2.11</version>
+			<version>${jaxb.versao}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-core</artifactId>
-			<version>2.2.11</version>
+			<version>${jaxb.versao}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-impl</artifactId>
-			<version>2.2.11</version>
+			<version>${jaxb.versao}</version>
 		</dependency>
 
 		<dependency>
@@ -207,6 +202,15 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
 			<version>${security.versao}</version>
+		</dependency>
+
+		<!-- Spring Test-->
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
