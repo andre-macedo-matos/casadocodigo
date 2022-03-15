@@ -2,6 +2,7 @@ package org.casadocodigo.loja.config;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import org.casadocodigo.controllers.HomeController;
 import org.casadocodigo.daos.ProductDAO;
@@ -16,6 +17,8 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
+import org.springframework.mail.MailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartResolver;
@@ -102,5 +105,22 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
+	}
+	
+	@Bean
+	public MailSender mailSender() {
+		JavaMailSenderImpl mailer = new JavaMailSenderImpl();
+		mailer.setHost("smtp.gmail.com");
+		mailer.setUsername("");
+		mailer.setPassword("");
+		mailer.setPort(587);
+		
+		Properties mailProperties = new Properties();
+		mailProperties.put("mail.smtp.auth", true);
+		mailProperties.put("mail.smtp.starttls.enable", true);
+		mailProperties.put("mail.smtp.ssl.protocols", "TLSv1.2");
+		mailer.setJavaMailProperties(mailProperties);
+		
+		return mailer;
 	}
 }

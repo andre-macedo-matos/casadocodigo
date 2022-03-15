@@ -2,6 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="customTags" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <customTags:pageTemplate bodyClass="cart" title="Seu Carrinho de compras">
 	<jsp:attribute name="scripts"></jsp:attribute>
@@ -23,8 +24,8 @@
 						<th width="10%">Quantidade</th>
 						<th width="10%">Total</th>
 						<th width="5%"></th>
-						</tr>
-					</thead>
+					</tr>
+				</thead>
 					<tbody>
 						<c:forEach items="${shoppingCart.list}" var="item">
 							<tr>
@@ -54,9 +55,9 @@
 					<tfoot>
 						<tr>
 							<td colsan="2">
-								<form method="post" action="${spring:mvcUrl('PC#checkout').build()}">
+								<form:form method="post" action="${spring:mvcUrl('PC#checkout').build()}">
 									<input type="submit" class="checkout" name="checkout" value="Finalizar compra" id="checkout"> 
-								</form> 
+								</form:form> 
 							</td>
 							
 							<td class="numeric-cell">

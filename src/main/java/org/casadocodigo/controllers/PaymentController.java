@@ -4,8 +4,12 @@ import java.math.BigDecimal;
 
 import org.casadocodigo.loja.models.IntegrandoComPagamento;
 import org.casadocodigo.loja.models.ShoppingCart;
+import org.casadocodigo.loja.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.mail.MailSender;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,8 +29,11 @@ public class PaymentController {
 
 	@Autowired
 	private RestTemplate restTemplate;
+	
+	@Autowired
+	private MailSender mailer;
 
-	@RequestMapping(value = "checkout", method = RequestMethod.POST)
+	@RequestMapping(value = "/checkout", method = RequestMethod.POST)
 	public DeferredResult<String> checkout() {
 		
 		BigDecimal total = shoppingCart.getTotal();
@@ -42,11 +49,22 @@ public class PaymentController {
 	}
 	
 	@RequestMapping(value = "/sucess")
-	public ModelAndView sucess(RedirectAttributes redirectAttributes) {
+	public ModelAndView sucess(RedirectAttributes redirectAttributes, @AuthenticationPrincipal User user) {
+		sendNewPurchaseMail(user);
+		
 		ModelAndView modelAndView = new ModelAndView("redirect:/produtos");
 		redirectAttributes.addFlashAttribute("message", "Compra Realizada com sucesso");
 		
 		return modelAndView;
+	}
+
+	private void sendNewPurchaseMail(User user) {
+		SimpleMailMessage email = new SimpleMailMessage();
+		email.setFrom("compras@casadocodigo.com.br");
+		email.setTo(user.getLogin());
+		email.setSubject("Nova Compra");
+		email.setText("corpo do email");
+		mailer.send(email);
 	}
 	
 	@RequestMapping(value = "/error")
