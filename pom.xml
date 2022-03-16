@@ -7,9 +7,9 @@
 	<packaging>war</packaging>
 	<build>
 		<finalName>casadocodigo</finalName>
-		
+
 		<plugins>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -20,7 +20,7 @@
 						<goals>
 							<goal>copy</goal>
 						</goals>
-						
+
 						<configuration>
 							<artifactItems>
 								<artifactItem>
@@ -34,7 +34,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
 		</plugins>
 	</build>
 	<properties>
@@ -146,10 +146,18 @@
 			<version>${spring.versao}</version>
 		</dependency>
 
+
+		<!-- Banco de dados-->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.15</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.4-1201-jdbc41</version>
 		</dependency>
 
 		<dependency>
@@ -252,14 +260,14 @@
 			<version>4.0.0.M2</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- email -->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>1.4.7</version>
 		</dependency>
-		
+
 
 	</dependencies>
 
