@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-public class DataSourceConfigurationTest {
+public class JPAConfigurationTest {
 	
 	@Bean
 	@Profile("test")
