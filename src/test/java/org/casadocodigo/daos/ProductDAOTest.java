@@ -8,8 +8,8 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.casadocodigo.loja.builders.ProductBuilder;
-import org.casadocodigo.loja.config.DataSourceConfigurationTest;
 import org.casadocodigo.loja.config.JPAConfiguration;
+import org.casadocodigo.loja.config.JPAConfigurationTest;
 import org.casadocodigo.loja.models.BookType;
 import org.casadocodigo.loja.models.Product;
 import org.junit.Test;
@@ -20,7 +20,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {DataSourceConfigurationTest.class, ProductDAO.class, JPAConfiguration.class})
+@ContextConfiguration(classes = {JPAConfigurationTest.class, ProductDAO.class, JPAConfiguration.class})
 @ActiveProfiles("test")
 public class ProductDAOTest {
 

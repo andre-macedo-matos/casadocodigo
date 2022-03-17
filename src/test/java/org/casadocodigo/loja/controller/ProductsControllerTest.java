@@ -12,8 +12,8 @@ import org.casadocodigo.daos.ProductDAO;
 import org.casadocodigo.loja.builders.ProductBuilder;
 import org.casadocodigo.loja.config.AmazonConfiguration;
 import org.casadocodigo.loja.config.AppWebConfiguration;
-import org.casadocodigo.loja.config.DataSourceConfigurationTest;
 import org.casadocodigo.loja.config.JPAConfiguration;
+import org.casadocodigo.loja.config.JPAConfigurationTest;
 import org.casadocodigo.loja.config.SecurityConfiguration;
 import org.casadocodigo.loja.models.Product;
 import org.junit.Before;
@@ -36,8 +36,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(classes = { AppWebConfiguration.class, JPAConfiguration.class, SecurityConfiguration.class,
-		DataSourceConfigurationTest.class, AmazonConfiguration.class })
+@ContextConfiguration(classes = { AppWebConfiguration.class, JPAConfiguration.class, JPAConfigurationTest.class, SecurityConfiguration.class,
+		AmazonConfiguration.class })
 @ActiveProfiles("test")
 public class ProductsControllerTest {
 
