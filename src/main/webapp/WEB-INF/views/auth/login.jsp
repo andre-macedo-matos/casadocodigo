@@ -14,10 +14,10 @@
 	<form:form class="main-login">
 
 		<label for="username">User</label>
-		<input type="text" id="username" value="">
+		<input type="text" id="username" name="username" value="">
 	
 		<label for="password">Password</label>
-		<input type="password" id="password">
+		<input type="password" id="password" name="password">
 	
 	
 		<input type="submit" name="submit" value="Login">
