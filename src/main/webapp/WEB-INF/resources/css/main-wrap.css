@@ -1,0 +1,25 @@
+@charset "ISO-8859-1";
+
+.main-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+
+.main-wrap.--list {
+	height: 30px;
+	line-height: 40px;
+	
+	list-style: none;
+}
+
+.main-wrap.--list .item {
+	padding-right: 5px;
+	border-right: 1px solid white;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.main-wrap.--list .item.--nav{
+	border-right: none;
+	line-height: 10px;
+}
