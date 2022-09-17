@@ -24,6 +24,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup,
 }
 
 body {
+	margin: 0;
 	line-height: 1;
 }
 
