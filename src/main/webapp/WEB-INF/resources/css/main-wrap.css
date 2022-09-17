@@ -3,23 +3,23 @@
 .main-wrap {
 	display: flex;
 	justify-content: space-between;
+	text-align: center;
 }
 
 .main-wrap.--list {
 	height: 30px;
-	line-height: 40px;
+	line-height: 60px;
 	
 	list-style: none;
 }
 
 .main-wrap.--list .item {
 	padding-right: 5px;
-	border-right: 1px solid white;
 	margin-right: 5px;
 	margin-left: 5px;
 }
 
 .main-wrap.--list .item.--nav{
 	border-right: none;
-	line-height: 10px;
+	line-height: 30px;
 }
