@@ -1,8 +1,8 @@
 @charset "ISO-8859-1";
 
 .main-logo {
-	background-color: white;
-	
-	margin: 10px;
+	width: 50px;
 	padding: 5px;
+	background-color: white;	
+	margin: 10px;
 }
