@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+
+.main-header {
+	display: flex;
+	justify-content: space-between;
+	
+	background-color: #fd8325;
+}
+
+.main-header.--nav {
+	height: 30px;
+	background-color: #fecd2f;
+}
