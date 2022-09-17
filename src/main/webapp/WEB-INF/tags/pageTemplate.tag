@@ -24,6 +24,9 @@
 	<link rel="stylesheet" href="./resources/css/main-wrap.css">
 	<link rel="stylesheet" href="./resources/css/main-button.css">
 	
+	<link rel="stylesheet" href="./resources/css/main-footer.css">
+	<link rel="stylesheet" href="./resources/css/main-form.css">
+	
 	<title>${title}</title>
 </head>
 <body class="${bodyClass}">
