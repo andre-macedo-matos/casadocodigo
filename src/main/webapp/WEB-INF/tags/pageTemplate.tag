@@ -24,6 +24,8 @@
 	<link rel="stylesheet" href="./resources/css/main-wrap.css">
 	<link rel="stylesheet" href="./resources/css/main-button.css">
 	
+	<link rel="stylesheet" href="./resources/css/main-section.css">
+	
 	<link rel="stylesheet" href="./resources/css/main-footer.css">
 	<link rel="stylesheet" href="./resources/css/main-form.css">
 	
