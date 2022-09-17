@@ -3,8 +3,6 @@
 
 <customTags:pageTemplate bodyClass="cart" title="Welcome">
 	<jsp:body>
-		<section class="main-section">
-			<h1 class="title"><spring:message code="hello.world" /></h1>
-		</section>
+		<h1 class="title"><spring:message code="hello.world" /></h1>
 	</jsp:body>
 </customTags:pageTemplate>

@@ -33,8 +33,9 @@
 </head>
 <body class="${bodyClass}">
 	<%@include file="/WEB-INF/header.jsp" %>
-	
-	<jsp:doBody/>
+	<section class="main-section">
+		<jsp:doBody/>
+	</section>
 	
 	<%@include file="/WEB-INF/footer.jsp" %>
 	
