@@ -18,6 +18,12 @@
 	<meta charset="ISO-8859-1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./resources/css/reset.css">
+	<link rel="stylesheet" href="./resources/css/main-header.css">
+	<link rel="stylesheet" href="./resources/css/main-logo.css">
+	<link rel="stylesheet" href="./resources/css/main-wrap.css">
+	<link rel="stylesheet" href="./resources/css/main-button.css">
+	
 	<title>${title}</title>
 </head>
 <body class="${bodyClass}">
