@@ -1,10 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="customTags" tagdir="/WEB-INF/tags" %>
 
-<customTags:pageTemplate bodyClass="body" title="Novo Produto">
+<customTags:pageTemplate contextPath="../" title="Novo Produto">
 	<jsp:body>
+		<h1 class="title">Novo Produto</h1>
 		<form:form method="post" action="${spring:mvcUrl('PC#save').build()}" commandName="product" enctype="multipart/form-data">
 			<div>
 				<label for="title">Título</label>

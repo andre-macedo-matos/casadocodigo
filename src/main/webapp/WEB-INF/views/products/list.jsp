@@ -4,12 +4,12 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="customTags" tagdir="/WEB-INF/tags" %>
 
-<customTags:pageTemplate bodyClass="" title="Produtos">
+<customTags:pageTemplate title="Produtos" contextPath="./">
 	<jsp:body>
 		<security:authentication property="principal" var="user"/>
 		<security:authorize access="isAuthenticated()">
 			<div>
-				<h1><spring:message code="users.welcome" arguments="${user.name}"/></h1>
+				<h1 class="title"><spring:message code="users.welcome" arguments="${user.name}"/></h1>
 			</div>
 		</security:authorize>
 		

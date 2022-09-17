@@ -1,5 +1,5 @@
 <%@ attribute name="title" required="true" %>
-<%@ attribute name="bodyClass" required="true" %>
+<%@ attribute name="contextPath" required="true" %>
 <%@ attribute name="scripts" fragment="true" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -18,20 +18,20 @@
 	<meta charset="ISO-8859-1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="./resources/css/reset.css">
-	<link rel="stylesheet" href="./resources/css/main-header.css">
-	<link rel="stylesheet" href="./resources/css/main-logo.css">
-	<link rel="stylesheet" href="./resources/css/main-wrap.css">
-	<link rel="stylesheet" href="./resources/css/main-button.css">
+	<link rel="stylesheet" href="${contextPath}resources/css/reset.css">
+	<link rel="stylesheet" href="${contextPath}resources/css/main-header.css">
+	<link rel="stylesheet" href="${contextPath}resources/css/main-logo.css">
+	<link rel="stylesheet" href="${contextPath}resources/css/main-wrap.css">
+	<link rel="stylesheet" href="${contextPath}resources/css/main-button.css">
 	
-	<link rel="stylesheet" href="./resources/css/main-section.css">
+	<link rel="stylesheet" href="${contextPath}resources/css/main-section.css">
 	
-	<link rel="stylesheet" href="./resources/css/main-footer.css">
-	<link rel="stylesheet" href="./resources/css/main-form.css">
+	<link rel="stylesheet" href="${contextPath}resources/css/main-footer.css">
+	<link rel="stylesheet" href="${contextPath}resources/css/main-form.css">
 	
 	<title>${title}</title>
 </head>
-<body class="${bodyClass}">
+<body>
 	<%@include file="/WEB-INF/header.jsp" %>
 	<section class="main-section">
 		<jsp:doBody/>

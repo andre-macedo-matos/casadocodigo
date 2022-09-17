@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="customTags" tagdir="/WEB-INF/tags" %>
 
-<customTags:pageTemplate bodyClass="" title="${product.title }">
+<customTags:pageTemplate contextPath="./../../" title="${product.title }">
 	<jsp:body>
 		<header id="product-highlight" class="clearfix">
 			<div id="product-overview" class="container">

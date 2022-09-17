@@ -4,7 +4,7 @@
 <%@ taglib prefix="customTags" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<customTags:pageTemplate bodyClass="cart" title="Seu Carrinho de compras">
+<customTags:pageTemplate contextPath="./" title="Seu Carrinho de compras">
 	<jsp:attribute name="scripts"></jsp:attribute>
 	
 	<jsp:body>
