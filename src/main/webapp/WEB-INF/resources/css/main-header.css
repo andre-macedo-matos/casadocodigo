@@ -10,5 +10,5 @@
 .main-header.--nav {
 	height: 30px;
 	background-color: #fecd2f;
-	margin-bottom: 10px;
+	border-bottom: 10px solid #fbfaf9;
 }
