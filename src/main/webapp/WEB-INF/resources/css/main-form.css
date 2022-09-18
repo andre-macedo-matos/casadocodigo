@@ -1,12 +1,39 @@
 @charset "ISO-8859-1";
 
 .main-form {
-	width: 100%;
-	
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+	align-items: stretch;
+	width: 80%;
 }
 
-.main-form .email {
+.main-form .label {
+	width: 50%;
+	font-size: 20px;
+	color: rgb(51, 51, 51);
+	
+	margin-bottom: 10px;
+}
+
+.main-form .input {
 	border: 1px solid #f8965d;
 	width: 100%;
 	height: 20px;
+	
+	margin-bottom: 10px;
+}
+
+.main-form .input.--text-area {
+	height: 80%;
+	
+	margin-bottom: 10px;
+}
+
+.main-form.--register {
+	margin-right: 30px;
+}
+
+.main-form .main-button .--submit {
+	width: 100%;
 }
