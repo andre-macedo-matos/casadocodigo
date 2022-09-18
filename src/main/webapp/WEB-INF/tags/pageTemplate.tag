@@ -29,6 +29,8 @@
 	<link rel="stylesheet" href="${contextPath}resources/css/main-footer.css">
 	<link rel="stylesheet" href="${contextPath}resources/css/main-form.css">
 	
+	<link rel="stylesheet" href="${contextPath}resources/css/main-table.css">
+	
 	<title>${title}</title>
 </head>
 <body>

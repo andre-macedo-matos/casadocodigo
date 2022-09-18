@@ -13,33 +13,36 @@
 			</div>
 		</security:authorize>
 		
-		<h1>${sucesso}</h1>
-		<h1>${message}</h1>
+		<h1 class="title">${sucesso}</h1>
+		<h1 class="title">${message}</h1>
 
-		<table>
+		<table class="main-table">
 			<tr>
-				<td>Título</td>
-				<td>Valores</td>
+				<td class="header"> Título</td>
+				<td class="header">Valores</td>
 			</tr>
 			
 			<c:forEach items="${products}" var="product">
 				<tr>
-					<td>
-						<a href="${spring:mvcUrl('PC#show').arg(0, product.id).build()}">${product.title}</a>
+					<td class="data">
+						<a class="main-button --table" href="${spring:mvcUrl('PC#show').arg(0, product.id).build()}">${product.title}</a>
 					</td>
-					<td>
+					<td class="data">
 						<c:forEach items="${product.prices}" var="price">
 							[${price.bookType} - R$ ${price.value}]
 						</c:forEach>
 					</td>
 				</tr>
 			</c:forEach>
+			
+			<tr>
+				<td class="header" colspan="2">
+					<security:authorize access="hasRole('ROLE_ADMIN')">
+							<a class="main-button --table" href="${spring:mvcUrl('PC#form').build()}">Cadastrar Novo Produto</a>
+					</security:authorize>
+				</td>
+			</tr>
 		</table>
 		
-		<security:authorize access="hasRole('ROLE_ADMIN')">
-			<div>
-				<a href="${spring:mvcUrl('PC#form').build()}">Cadastrar Novo Produto</a>
-			</div>
-		</security:authorize>
 	</jsp:body>
 </customTags:pageTemplate>
