@@ -48,7 +48,7 @@
 				<ul>
 					<li><input type="hidden" name="pageNumber" value="0">
 						<input type="hidden" name="backupCache" value=""> 
-						<input type="email" name="entry.0.single" value="" class="email"
+						<input class="input" type="email" name="entry.0.single" value="" 
 						id="entry_0" placeholder="seu@email.com"></li>
 					<li><input class="main-button --submit" type="submit" name="submit" value="Quero Receber!" id="submit-newsletter"></li>
 				</ul>
