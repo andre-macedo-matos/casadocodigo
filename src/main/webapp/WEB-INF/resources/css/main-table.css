@@ -1,0 +1,23 @@
+@charset "ISO-8859-1";
+
+.main-table {
+	width: calc(100% - 60px);
+	text-align: center;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+.main-table .header {
+	background-color: #e4e1de;
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+.main-table .data {
+	background-color: #f2f0ee;
+	font-size: 10px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
