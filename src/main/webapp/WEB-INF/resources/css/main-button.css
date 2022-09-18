@@ -27,3 +27,14 @@
 	border: none;
 	
 }
+
+.main-button.--table {
+	display: inline-block;
+	width: 50%;
+	height: 10px;
+	background-color: #f8965d;
+	font-size: 10px;
+	line-height: 10px;
+	box-shadow: 3px 3px #f8965d88;
+	border: none;
+}
