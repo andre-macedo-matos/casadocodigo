@@ -29,11 +29,18 @@
 	<div class="section">
 		<p class="title">Redes Sociais</p>
 		<ul>
-			<li class="social-links"><a
-				href="http://www.twitter.com/casadocodigo" target="_blank"
-				id="twitter" rel="nofollow">Facebook</a> <a
-				href="http://www.facebook.com/casadocodigo" target="_blank"
-				id="facebook" rel="nofollow">Twitter</a></li>
+			<li class="social-links">
+				<a class="social --twitter" href="http://www.facebook.com/casadocodigo" target="_blank"
+				   id="facebook" rel="nofollow">
+				   @casadocodigo
+				</a>
+			</li>
+			<li class="social-links">
+				<a class="social --facebook" href="http://www.twitter.com/casadocodigo" target="_blank"
+			   	   id="twitter" rel="nofollow">
+			   	   /CasaDoCodigo
+		   	   </a> 
+			</li>
 		</ul>
 	</div>
 	

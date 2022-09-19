@@ -10,7 +10,7 @@
 }
 
 .main-footer .section {
-	font-size: 13px;
+	font-size: 15px;
 }
 
 .main-footer .section li {	
@@ -23,12 +23,32 @@
 	text-decoration: none;
 }
 
-.main-footer .section li a:hover {
-	text-decoration: underline;
+.main-footer .section li a.social {
+	display: block;
+	height: 31px;
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+	background-size: 31px;
+	line-height: 33px;
+	font-size: 15px;
+	padding-left: 40px;
 }
+
 .main-footer .title {
 	color: #f8965d;
 	font-size: 16px;
 	
 	margin-bottom: 20px;
+}
+
+.main-footer .section li a.social.--twitter {
+	background-image: url(https://cdn.shopify.com/s/files/1/0155/7645/t/257/assets/twitter.png?v=136232526925343610831649095186);
+}
+
+.main-footer .section li a.social.--facebook {
+	background-image: url(https://cdn.shopify.com/s/files/1/0155/7645/t/257/assets/facebook.png?v=137303408305403980571649095163);
+}
+
+.main-footer .section li a:hover {
+	text-decoration: underline;
 }
