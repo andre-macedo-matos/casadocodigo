@@ -6,6 +6,7 @@
 			 alt="logo casa do codigo"
 			 class="main-logo">
 		<ul class="main-wrap --list">
+			<li class="item"><a class="main-button" href="${spring:mvcUrl('PC#list').build()}" rel="nofollow">Produtos</a></li>
 			<li class="item">
 				<a class="main-button" href="${spring:mvcUrl('SC#items').build()}" rel="nofollow">Seu carrinho (${shoppingCart.quantity})
 				</a>
@@ -21,7 +22,7 @@
 <nav class="main-header --nav">
 	<ul class="main-wrap --list">
 		<li class="item --nav"><a class="main-button --nav" href="http://www.casadocodigo.com.br">Home</a>
-		<li class="item --nav"><a class="main-button --nav" href="${spring:mvcUrl('PC#list').build()}"><fmt:message key="Produtos" /></a>
+		<li class="item --nav"><a class="main-button --nav" href="${spring:mvcUrl('PC#list').build()}">Produtos</a>
 		<li class="item --nav"><a class="main-button --nav" href="${spring:mvcUrl('PC#list').build()}"><fmt:message key="navigation.category.agile" /></a>
 		<li class="item --nav"><a class="main-button --nav" href="${spring:mvcUrl('PC#list').build()}"><fmt:message key="navigation.category.front_end" /></a>
 		<li class="item --nav"><a class="main-button --nav" href="${spring:mvcUrl('PC#list').build()}"><fmt:message key="navigation.category.games" /></a>
