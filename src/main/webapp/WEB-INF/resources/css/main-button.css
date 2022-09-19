@@ -44,3 +44,12 @@
 	box-shadow: 3px 3px #f8965d88;
 	border: none;
 }
+
+.main-button.--summary {
+	color: #6c6a69;
+	text-decoration: none;
+}
+
+.main-button.--summary:hover {
+	text-decoration: underline;
+}
