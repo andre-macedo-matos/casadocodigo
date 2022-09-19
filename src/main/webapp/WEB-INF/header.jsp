@@ -21,12 +21,13 @@
 <nav class="main-header --nav">
 	<ul class="main-wrap --list">
 		<li class="item --nav"><a class="main-button --nav" href="http://www.casadocodigo.com.br">Home</a>
-		<li class="item --nav"><a class="main-button --nav" href="/collections/livros-de-agile"><fmt:message key="navigation.category.agile" /></a>
-		<li class="item --nav"><a class="main-button --nav" href="/collections/livros-de-front-end"><fmt:message key="navigation.category.front_end" /></a>
-		<li class="item --nav"><a class="main-button --nav" href="/collections/livros-de-games"><fmt:message key="navigation.category.games" /></a>
-		<li class="item --nav"><a class="main-button --nav" href="/collections/livros-de-java"> <fmt:message key="navigation.category.java" /></a>
-		<li class="item --nav"><a class="main-button --nav" href="/collections/livros-de-mobile"><fmt:message key="navigation.category.mobile" /></a>
-		<li class="item --nav"><a class="main-button --nav" href="/collections/livros-desenvolvimento-web"> <fmt:message key="navigation.category.web"/></a>
-		<li class="item --nav"><a class="main-button --nav" href="/collections/outros"> <fmt:message key="navigation.category.others"/></a>
+		<li class="item --nav"><a class="main-button --nav" href="${spring:mvcUrl('PC#list').build()}"><fmt:message key="Produtos" /></a>
+		<li class="item --nav"><a class="main-button --nav" href="${spring:mvcUrl('PC#list').build()}"><fmt:message key="navigation.category.agile" /></a>
+		<li class="item --nav"><a class="main-button --nav" href="${spring:mvcUrl('PC#list').build()}"><fmt:message key="navigation.category.front_end" /></a>
+		<li class="item --nav"><a class="main-button --nav" href="${spring:mvcUrl('PC#list').build()}"><fmt:message key="navigation.category.games" /></a>
+		<li class="item --nav"><a class="main-button --nav" href="${spring:mvcUrl('PC#list').build()}"><fmt:message key="navigation.category.java" /></a>
+		<li class="item --nav"><a class="main-button --nav" href="${spring:mvcUrl('PC#list').build()}"><fmt:message key="navigation.category.mobile" /></a>
+		<li class="item --nav"><a class="main-button --nav" href="${spring:mvcUrl('PC#list').build()}"><fmt:message key="navigation.category.web"/></a>
+		<li class="item --nav"><a class="main-button --nav" href="${spring:mvcUrl('PC#list').build()}"><fmt:message key="navigation.category.others"/></a>
 	</ul>
 </nav>
