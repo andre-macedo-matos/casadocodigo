@@ -40,7 +40,8 @@ public class ProductsController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	@CacheEvict(value = "books", allEntries = true)
-	public ModelAndView save(MultipartFile summary, @Valid Product product, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+	public ModelAndView save(MultipartFile summary, @Valid Product product, BindingResult bindingResult, 
+							 RedirectAttributes redirectAttributes) {
 		if(bindingResult.hasErrors()) 
 			return form(product);
 

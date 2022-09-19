@@ -18,12 +18,12 @@
 	<meta charset="ISO-8859-1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<link rel="stylesheet" href="${contextPath}resources/css/reset.css">
 	<link rel="stylesheet" href="${contextPath}resources/css/main-header.css">
 	<link rel="stylesheet" href="${contextPath}resources/css/main-logo.css">
 	<link rel="stylesheet" href="${contextPath}resources/css/main-wrap.css">
 	<link rel="stylesheet" href="${contextPath}resources/css/main-button.css">
-	
 	<link rel="stylesheet" href="${contextPath}resources/css/main-section.css">
 	
 	<link rel="stylesheet" href="${contextPath}resources/css/main-footer.css">
