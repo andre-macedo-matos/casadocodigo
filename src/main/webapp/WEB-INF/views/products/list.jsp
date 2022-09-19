@@ -14,7 +14,7 @@
 		</security:authorize>
 		
 		<h1 class="title --sucess">${sucesso}</h1>
-		<h1 class="title --alert">${message}</h1>
+		<h1 class="title --sucess">${message}</h1>
 
 		<table class="main-table">
 			<tr>
