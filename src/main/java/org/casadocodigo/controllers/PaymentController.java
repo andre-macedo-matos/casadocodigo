@@ -30,8 +30,8 @@ public class PaymentController {
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	@Autowired
-	private MailSender mailer;
+//	@Autowired
+//	private MailSender mailer;
 
 	@RequestMapping(value = "/checkout", method = RequestMethod.POST)
 	public DeferredResult<String> checkout() {
@@ -50,7 +50,7 @@ public class PaymentController {
 	
 	@RequestMapping(value = "/sucess")
 	public ModelAndView sucess(RedirectAttributes redirectAttributes, @AuthenticationPrincipal User user) {
-		sendNewPurchaseMail(user);
+//		sendNewPurchaseMail(user);
 		
 		ModelAndView modelAndView = new ModelAndView("redirect:/produtos");
 		redirectAttributes.addFlashAttribute("message", "Compra Realizada com sucesso");
@@ -58,14 +58,14 @@ public class PaymentController {
 		return modelAndView;
 	}
 
-	private void sendNewPurchaseMail(User user) {
-		SimpleMailMessage email = new SimpleMailMessage();
-		email.setFrom("compras@casadocodigo.com.br");
-		email.setTo(user.getLogin());
-		email.setSubject("Nova Compra");
-		email.setText("corpo do email");
-		mailer.send(email);
-	}
+//	private void sendNewPurchaseMail(User user) {
+//		SimpleMailMessage email = new SimpleMailMessage();
+//		email.setFrom("compras@casadocodigo.com.br");
+//		email.setTo(user.getLogin());
+//		email.setSubject("Nova Compra");
+//		email.setText("corpo do email");
+//		mailer.send(email);
+//	}
 	
 	@RequestMapping(value = "/error")
 	public ModelAndView error(RedirectAttributes redirectAttributes) {
