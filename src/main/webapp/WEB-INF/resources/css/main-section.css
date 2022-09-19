@@ -13,4 +13,14 @@
 	color: #6c6a69;
 	margin-bottom: 10px;
 }
+
+.main-section .title.--alert {
+	font-size: 15px;
+	color: red;
+}
+
+.main-section > .title.--sucess {
+	font-size: 15px;
+	color: green;
+}
 	

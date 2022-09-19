@@ -13,8 +13,8 @@
 			</div>
 		</security:authorize>
 		
-		<h1 class="title">${sucesso}</h1>
-		<h1 class="title">${message}</h1>
+		<h1 class="title --sucess">${sucesso}</h1>
+		<h1 class="title --alert">${message}</h1>
 
 		<table class="main-table">
 			<tr>
