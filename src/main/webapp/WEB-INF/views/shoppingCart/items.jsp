@@ -9,8 +9,8 @@
 	
 	<jsp:body>
 		<section class="container middle">
-			<h2 id="cart-title">Seu Carrinho de compras</h2>
-			<table id="cart-table">
+			<h2 class="title">Seu Carrinho de compras</h2>
+			<table class="main-table" id="cart-table">
 				<colgroup class="item-col">
 				<colgroup class="item-price-col">
 				<colgroup class="item-quantity-col">
@@ -18,49 +18,50 @@
 				<colgroup class="delete-col">
 				<thead>
 					<tr>
-						<th class="cart-img-col></th>
-						<th width="65%">Item</th>
-						<th width="10%">Preço</th>
-						<th width="10%">Quantidade</th>
-						<th width="10%">Total</th>
-						<th width="5%"></th>
+						<th class="header"></th>
+						<th class="header" width="65%">Item</th>
+						<th class="header" width="10%">Preço</th>
+						<th class="header" width="10%">Quantidade</th>
+						<th class="header" width="10%">Total</th>
 					</tr>
 				</thead>
 					<tbody>
 						<c:forEach items="${shoppingCart.list}" var="item">
 							<tr>
-								<td class="cart-img-col">
-									<img alt="${item.product.title}" src="">
+								<td class="data --cart">
+									<img class="main-logo --cover" itemprop="image" alt="${product.title}" 
+				 src="https://cdn.shopify.com/s/files/1/0155/7645/products/p_408c6b07-0499-45a6-99fe-d06b67cf92ef_large.jpg?v=1659469600">
 								</td>
 								
-								<td class="item-title">
+								<td class="data --cart">
 									${item.product.title} - ${item.bookType}
 								</td>
 								
-								<td class="numeric-cell">
+								<td class="data --cart">
 									${item.price}
 								</td>
 								
-								<td class="quantity-input-cell">
-									<input type="number" min="0" readonly="readonly" value="${shoppingCart.getQuantity(item)}">
+								<td class="data --cart">
+									<input type="number" min="1" value="${shoppingCart.getQuantity(item)}">
 								</td>
 								
-								<td class="numeric-cell">
+								<td class="data --cart">
 									${shoppingCart.getTotal(item)}
 								</td>
 							</tr>
 						</c:forEach>
 					</tbody>
 					
-					<tfoot>
+					<tfoot class="header">
 						<tr>
-							<td colsan="2">
+							<td colspan="4" class="header -first-column">
 								<form:form method="post" action="${spring:mvcUrl('PC#checkout').build()}">
-									<input type="submit" class="checkout" name="checkout" value="Finalizar compra" id="checkout"> 
+									<input type="submit" class="main-button --submit --table --cart" 
+									name="checkout" value="Finalizar compra" id="checkout"> 
 								</form:form> 
 							</td>
 							
-							<td class="numeric-cell">
+							<td class="header">
 								R$ ${shoppingCart.total}
 							</td>
 						</tr>
