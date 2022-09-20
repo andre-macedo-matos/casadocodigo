@@ -6,3 +6,8 @@
 	background-color: white;	
 	margin: 10px;
 }
+
+.main-logo.--cover {
+	width: 60px;
+	background-color: transparent;
+}
