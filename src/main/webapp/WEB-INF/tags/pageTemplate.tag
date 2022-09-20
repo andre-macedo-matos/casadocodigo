@@ -31,6 +31,9 @@
 	
 	<link rel="stylesheet" href="${contextPath}resources/css/main-table.css">
 	
+	<link rel="stylesheet" href="${contextPath}resources/css/main-img.css">
+	<link rel="stylesheet" href="${contextPath}resources/css/main-list.css">
+	
 	<title>${title}</title>
 </head>
 <body>
