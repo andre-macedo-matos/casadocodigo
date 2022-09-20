@@ -31,7 +31,7 @@ public class ShoppingController {
 		
 		System.out.println(shoppingCart);
 		
-		return new ModelAndView("redirect:/produtos");
+		return new ModelAndView("redirect:/shopping");
 	}
 
 	private ShoppingItem createItem(Integer productId, BookType bookType) {
