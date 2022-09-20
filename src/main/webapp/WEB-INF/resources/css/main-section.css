@@ -19,8 +19,24 @@
 	color: red;
 }
 
-.main-section > .title.--sucess {
+.main-section .title.--sucess {
 	font-size: 15px;
 	color: green;
+}
+
+.main-section .title.--book {
+	color: black;
+	font-weight: bold;
+}
+
+.main-section .text {
+	font-size: 10px;
+	color: #333333;	
+}
+
+.main-section .description {
+	display: inline-block;
+	width: 500px;
+	font-size: 13px;
 }
 	
