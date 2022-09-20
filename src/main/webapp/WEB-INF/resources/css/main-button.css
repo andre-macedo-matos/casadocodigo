@@ -11,6 +11,15 @@
 	border-right: 1px solid white;
 }
 
+.main-button:active {
+	transform: scale(0.8);
+}
+
+.main-button:hover {
+	cursor: pointer;
+	opacity: 0.3;
+}
+
 .main-button.--nav {
 	font-size: 10px;
 	line-height: 10px;
