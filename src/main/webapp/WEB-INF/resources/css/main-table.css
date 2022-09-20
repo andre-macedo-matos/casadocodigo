@@ -3,6 +3,7 @@
 .main-table {
 	width: calc(100% - 60px);
 	text-align: center;
+	text-align: center;
 	margin-right: 30px;
 	margin-left: 30px;
 }
@@ -15,9 +16,19 @@
 	padding-bottom: 10px;
 }
 
+.main-table .header.-first-column {
+	text-align: left;
+	padding-left: 10px;
+}
+
 .main-table .data {
 	background-color: #f2f0ee;
 	font-size: 10px;
+	vertical-align: middle;
 	padding-top: 5px;
 	padding-bottom: 10px;
+}
+
+.main-table .data.--cart {
+	font-size: 15px;
 }
