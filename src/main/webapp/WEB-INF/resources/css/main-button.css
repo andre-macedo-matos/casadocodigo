@@ -62,3 +62,11 @@
 .main-button.--summary:hover {
 	text-decoration: underline;
 }
+
+.main-button.--cart {
+	width: 10%;
+	height: 30px;
+	line-height: 1px;
+	font-size: 12px;
+	box-shadow: none;
+}
