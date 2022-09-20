@@ -23,3 +23,10 @@
 	border-right: none;
 	line-height: 30px;
 }
+
+.main-wrap.--book {
+	align-items: center;
+	width: calc(100% - 240px);
+	margin-right: 120px;
+	margin-left: 120px;
+}
