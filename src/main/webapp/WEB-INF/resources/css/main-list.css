@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+
+.main-list {
+	width: 250px;
+	height: 175px;
+	background-color: #f2f0ee;
+	font-size: 15px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.main-list .line {
+	border-top: 1px solid rgba(108,105,105,.1);
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
