@@ -258,7 +258,7 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
-			<version>4.0.0.M2</version>
+			<version>${security.versao}</version>
 			<scope>test</scope>
 		</dependency>
 
