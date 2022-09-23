@@ -3,6 +3,7 @@ package org.casadocodigo.loja.infra;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -11,7 +12,8 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 
 @Component
-public class FileSaver {
+@Profile("dev")
+public class FileSaver implements Saver {
 
 	@Autowired
 	AmazonS3Client s3;

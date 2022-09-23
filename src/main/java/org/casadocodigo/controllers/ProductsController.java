@@ -4,7 +4,7 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.casadocodigo.daos.ProductDAO;
-import org.casadocodigo.loja.infra.FileSaver;
+import org.casadocodigo.loja.infra.Saver;
 import org.casadocodigo.loja.models.BookType;
 import org.casadocodigo.loja.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ public class ProductsController {
 	private ProductDAO productDAO;
 	
 	@Autowired
-	private FileSaver fileSaver;
+	private Saver fileSaver;
 	
 	@RequestMapping(value = "/form", method = RequestMethod.GET)
 	public ModelAndView form(Product product) {

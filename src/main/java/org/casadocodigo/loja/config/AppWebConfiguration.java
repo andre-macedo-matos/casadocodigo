@@ -6,6 +6,7 @@ import java.util.List;
 import org.casadocodigo.controllers.HomeController;
 import org.casadocodigo.daos.ProductDAO;
 import org.casadocodigo.loja.infra.FileSaver;
+import org.casadocodigo.loja.infra.FileSaverProduction;
 import org.casadocodigo.loja.models.ShoppingCart;
 import org.casadocodigo.loja.viewresolver.JsonViewResolver;
 import org.springframework.context.MessageSource;
@@ -34,7 +35,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @EnableWebMvc
 @ComponentScan(basePackageClasses = { HomeController.class, ProductDAO.class, FileSaver.class, ShoppingCart.class,
-		CacheManagerConfiguration.class })
+		CacheManagerConfiguration.class, FileSaverProduction.class })
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
 	@Bean
