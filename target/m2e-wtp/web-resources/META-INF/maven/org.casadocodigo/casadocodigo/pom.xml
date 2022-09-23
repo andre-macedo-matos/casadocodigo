@@ -45,7 +45,7 @@
 		<jackson.versao>2.5.1</jackson.versao>
 		<security.versao>4.0.2.RELEASE</security.versao>
 		<jaxb.versao>2.2.11</jaxb.versao>
-		<postgres.versao>9.1-901-1.jdbc4</postgres.versao>
+		<postgres.versao>9.2-1004-jdbc41</postgres.versao>
 	</properties>
 
 	<dependencies>
@@ -154,7 +154,7 @@
 		</dependency>
 
 		<dependency>
-			<groupId>postgresql</groupId>
+			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>${postgres.versao}</version>
 		</dependency>
