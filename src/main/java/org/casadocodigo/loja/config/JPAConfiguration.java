@@ -42,10 +42,13 @@ public class JPAConfiguration {
 		return transactionManager;
 	}
 
+	@Bean
+	@Profile("dev")
 	public Properties additionalProperties() {
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.hbm2ddl.auto", "update");
 		properties.setProperty("hbernate.show_sql", "true");
+		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL9Dialect");
 		
 		return properties;
 	}

@@ -1,6 +1,7 @@
 package org.casadocodigo.loja.config;
 
 import java.net.URISyntaxException;
+import java.util.Properties;
 
 import javax.sql.DataSource;
 
@@ -26,5 +27,16 @@ public class JPAProductionConfiguration {
         dataSource.setPassword(environment.getProperty("JDBC_DATABASE_PASSWORD",""));
 		
 		return dataSource;
+	}
+	
+	@Bean
+	@Profile("prod")
+	public Properties additionalProperties() {
+		Properties properties = new Properties();
+		properties.setProperty("hibernate.hbm2ddl.auto", "update");
+		properties.setProperty("hbernate.show_sql", "true");
+		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+		
+		return properties;
 	}
 }
