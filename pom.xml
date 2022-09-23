@@ -13,7 +13,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.0.1</version>
+				<version>2.3</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -47,6 +47,7 @@
 		<jackson.versao>2.5.1</jackson.versao>
 		<security.versao>4.0.0.M2</security.versao>
 		<jaxb.versao>2.2.11</jaxb.versao>
+		<postgres.versao>9.1-901-1.jdbc4</postgres.versao>
 	</properties>
 
 	<dependencies>
@@ -155,9 +156,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.postgresql</groupId>
+			<groupId>postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>9.4-1201-jdbc41</version>
+			<version>${postgres.versao}</version>
 		</dependency>
 
 		<dependency>

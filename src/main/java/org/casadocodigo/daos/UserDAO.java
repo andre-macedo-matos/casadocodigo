@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.casadocodigo.loja.models.User;
+import org.casadocodigo.loja.models.Users;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -19,9 +19,9 @@ public class UserDAO implements UserDetailsService{
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		String jpql = "select u from User u where u.login = :login";
+		String jpql = "select u from Users u where u.login = :login";
 		
-		List<User> users = manager.createQuery(jpql, User.class).setParameter("login", username).getResultList();
+		List<Users> users = manager.createQuery(jpql, Users.class).setParameter("login", username).getResultList();
 		
 		if (users.isEmpty()) {
 			throw new UsernameNotFoundException("O usuário " + username + " não existe!");

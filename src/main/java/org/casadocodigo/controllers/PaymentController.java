@@ -4,11 +4,9 @@ import java.math.BigDecimal;
 
 import org.casadocodigo.loja.models.IntegrandoComPagamento;
 import org.casadocodigo.loja.models.ShoppingCart;
-import org.casadocodigo.loja.models.User;
+import org.casadocodigo.loja.models.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import org.springframework.mail.MailSender;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,7 +47,7 @@ public class PaymentController {
 	}
 	
 	@RequestMapping(value = "/sucess")
-	public ModelAndView sucess(RedirectAttributes redirectAttributes, @AuthenticationPrincipal User user) {
+	public ModelAndView sucess(RedirectAttributes redirectAttributes, @AuthenticationPrincipal Users user) {
 //		sendNewPurchaseMail(user);
 		
 		ModelAndView modelAndView = new ModelAndView("redirect:/produtos");

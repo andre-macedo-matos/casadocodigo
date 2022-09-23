@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 
 import org.casadocodigo.loja.models.BookType;
 import org.casadocodigo.loja.models.Product;
@@ -26,6 +27,7 @@ public class ProductDAO {
 		return manager.createQuery("select distinct(p) from Product p join fetch p.prices", Product.class).getResultList();
 	}
 
+	@Transactional
 	public Product find(Integer id) {
 		String query = "select distinct(p) from Product p join fetch p.prices where p.id = :id";
 		return manager.createQuery(query, Product.class).setParameter("id", id).getSingleResult();

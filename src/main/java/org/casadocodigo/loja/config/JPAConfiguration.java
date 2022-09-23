@@ -33,6 +33,23 @@ public class JPAConfiguration {
 		return em;
 	}
 
+	
+	@Bean
+	public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
+		JpaTransactionManager transactionManager = new JpaTransactionManager();
+		transactionManager.setEntityManagerFactory(emf);
+		
+		return transactionManager;
+	}
+
+	public Properties additionalProperties() {
+		Properties properties = new Properties();
+		properties.setProperty("hibernate.hbm2ddl.auto", "update");
+		properties.setProperty("hbernate.show_sql", "true");
+		
+		return properties;
+	}
+	
 	@Bean
 	@Profile("dev")
 	public DataSource dataSource() {
@@ -46,21 +63,4 @@ public class JPAConfiguration {
 		return dataSource;
 	}
 	
-	public Properties additionalProperties() {
-		Properties properties = new Properties();
-		properties.setProperty("hibernate.hbm2ddl.auto", "update");
-		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-		properties.setProperty("hbernate.show_sql", "true");
-		
-		return properties;
-	}
-	
-	@Bean
-	public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
-		JpaTransactionManager transactionManager = new JpaTransactionManager();
-		transactionManager.setEntityManagerFactory(emf);
-		
-		return transactionManager;
-	}
-
 }

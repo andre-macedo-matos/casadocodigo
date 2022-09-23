@@ -2,7 +2,6 @@ package org.casadocodigo.loja.config;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 import org.casadocodigo.controllers.HomeController;
 import org.casadocodigo.daos.ProductDAO;
@@ -17,8 +16,6 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
-import org.springframework.mail.MailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartResolver;
