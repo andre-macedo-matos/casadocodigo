@@ -20,6 +20,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<link rel="stylesheet" href="${contextPath}resources/css/reset.css">
+	<link rel="stylesheet" href="${contextPath}resources/css/main-login.css">
 	<link rel="stylesheet" href="${contextPath}resources/css/main-header.css">
 	<link rel="stylesheet" href="${contextPath}resources/css/main-logo.css">
 	<link rel="stylesheet" href="${contextPath}resources/css/main-wrap.css">
