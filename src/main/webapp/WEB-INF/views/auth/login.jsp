@@ -1,6 +1,7 @@
 <%@ taglib prefix="customTags" tagdir="/WEB-INF/tags" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <customTags:pageTemplate contextPath="${pageContext.request.contextPath}/" title="Login">
 	<jsp:body>
