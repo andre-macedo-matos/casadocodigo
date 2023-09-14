@@ -42,7 +42,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.versao>4.1.0.RELEASE</spring.versao>
 		<hibernate.version>4.3.0.Final</hibernate.version>
-		<jackson.versao>2.5.1</jackson.versao>
+		<jackson.versao>2.12.7.1</jackson.versao>
 		<security.versao>4.0.2.RELEASE</security.versao>
 		<jaxb.versao>2.2.11</jaxb.versao>
 		<postgres.versao>9.2-1004-jdbc41</postgres.versao>
